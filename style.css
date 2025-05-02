@@ -161,14 +161,16 @@
     font-size: 1.1rem;
     line-height: 1.8;
   }
-.hero-section {
+body {
   background-image: url('bglogo.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 100px 20px;
-  color: white;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
+
 
 
       
