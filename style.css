@@ -161,15 +161,7 @@
     font-size: 1.1rem;
     line-height: 1.8;
   }
-body {
-  background-image: url('bglogo.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
+
 
 
 
