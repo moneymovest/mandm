@@ -154,3 +154,58 @@ footer {
 .hero {
   font-family: 'Lora', serif; /* Ensuring homepage font style */
 }
+/* Define the initial state of the blog button */
+#blog-btn {
+  position: relative;
+  text-decoration: none;
+  background-color: #3498db; /* You can change the color */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-family: 'Lora', serif;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+#blog-btn:hover {
+  background-color: #2980b9;
+  animation: explode 0.5s ease forwards; /* Trigger animation on hover */
+}
+
+/* Define the explode animation */
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Optional: Add a fancy hover effect */
+#blog-btn:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#blog-btn:hover:after {
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+}
