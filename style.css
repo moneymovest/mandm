@@ -161,6 +161,39 @@
     font-size: 1.1rem;
     line-height: 1.8;
   }
+.contact-section {
+  background: #fdfdfd;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.contact-icons a img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+.contact-icons a img:hover {
+  transform: scale(1.2);
+}
 
 
 
