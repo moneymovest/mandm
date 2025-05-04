@@ -31,13 +31,24 @@ body {
   position: relative;
 }
 
+/* Button active state animation */
 #learnMoreBtn, #blogBtn {
   font-size: 20px;
   font-weight: bold;
-  cursor: pointer;
 }
 
-/* Floating animation */
+#learnMoreBtn:active, #blogBtn:active {
+  animation: blastAnimation 0.5s forwards;
+}
+
+/* Keyframes for Blast Animation */
+@keyframes blastAnimation {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+/* Floating Animation */
 .floating-stars span {
   position: absolute;
   animation: float 5s ease-in-out infinite;
@@ -60,28 +71,7 @@ body {
   100% { transform: rotate(0deg); }
 }
 
-@keyframes blastAnimation {
-  0% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(1.2); opacity: 0; }
-}
-
-/* Button animations */
-#learnMoreBtn:active, #blogBtn:active {
-  animation: blastAnimation 0.5s forwards;
-}
-
-/* Sliding Animations for Sections */
-#about, #blog {
-  display: none;
-  opacity: 0;
-}
-
-#learnMoreBtn:active + #about, #blogBtn:active + #blog {
-  display: block;
-  animation: slideIn 1s forwards;
-  opacity: 1;
-}
-
+/* Slide In and Out Animations */
 @keyframes slideIn {
   0% { transform: translateX(100%); }
   100% { transform: translateX(0); }
@@ -92,8 +82,51 @@ body {
   100% { transform: translateX(-100%); }
 }
 
+/* For About Section */
+#about {
+  display: none;
+  opacity: 0;
+}
+
+#learnMoreBtn:active + #about {
+  display: block;
+  animation: slideIn 1s forwards;
+  opacity: 1;
+}
+
+/* For Blog Section */
+#blog {
+  display: none;
+  opacity: 0;
+}
+
+#blogBtn:active + #blog {
+  display: block;
+  animation: slideIn 1s forwards;
+  opacity: 1;
+}
+
 #about:target, #blog:target {
   display: block;
   opacity: 1;
   animation: slideIn 1s forwards;
+}
+
+/* Make the button same on all devices */
+@media (max-width: 600px) {
+  .btn {
+    background-color: #ff6600; /* Ensure button color stays the same */
+  }
+}
+
+/* Make sure everything is responsive */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
 }
