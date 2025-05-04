@@ -308,6 +308,61 @@
   background-size: 400% 400%;
   animation: gradientBG 10s ease infinite;
 }
+.typewriter h1 {
+  overflow: hidden;
+  border-right: .15em solid white;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn ease 2s forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.floating-stars span {
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  animation: starFloat 12s infinite linear;
+  opacity: 0.3;
+}
+
+@keyframes starFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100vh); }
+}
+.pulse-button {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.slide-in-left {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  0% { transform: translateX(-100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
 
 
 
