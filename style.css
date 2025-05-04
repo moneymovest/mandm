@@ -10,10 +10,13 @@
   }
   
   body {
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    background: #fff;
-    color: #333;
+    body {
+      font-family: 'Lora', serif;
+      line-height: 1.6;
+      background: #fff;
+      color: #333;
+    }
+    
   }
   
   .hero {
@@ -362,6 +365,15 @@
 @keyframes slideInLeft {
   0% { transform: translateX(-100px); opacity: 0; }
   100% { transform: translateX(0); opacity: 1; }
+}
+
+.inconsolata-<uniquifier> {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 
