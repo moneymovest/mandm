@@ -10,6 +10,9 @@ body {
   line-height: 1.6;
   background: #fff;
   color: #333;
+  margin: 0 auto; /* Center the body content */
+  width: 100%; /* Prevent horizontal scrolling */
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 /* Hero Section */
@@ -23,6 +26,9 @@ body {
   align-items: center;
   text-align: center;
   padding: 20px;
+  margin: 0 auto; /* Ensure the section is centered */
+  width: 100%; /* Prevent any horizontal shifting */
+  box-sizing: border-box; /* Include padding in width calculations */
 }
 
 .home-content h1 {
@@ -44,6 +50,7 @@ body {
   display: flex;
   gap: 15px; /* Add spacing between buttons */
   margin-top: 20px; /* Add spacing above the buttons */
+  justify-content: center; /* Center the buttons horizontally */
 }
 
 .buttons a {
