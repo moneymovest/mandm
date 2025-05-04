@@ -296,6 +296,19 @@
     opacity: 0;
   }
 }
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #0f2027, #1c92d2);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
 
 
 
