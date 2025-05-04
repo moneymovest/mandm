@@ -11,7 +11,7 @@
 <body>
 
   <!-- Hero Section -->
-  <section id="hero">
+  <header id="hero">
     <div class="home-content">
       <h1>Welcome to My Website</h1>
       <h2><span class="signature">Ashish</span></h2>
@@ -21,50 +21,61 @@
         <a href="blog.html" class="btn blog-btn">Blog</a>
       </div>
     </div>
-  </section>
+  </header>
 
   <!-- About Section -->
-  <section id="about" class="section">
-    <h2>Hey! I am Ashish Singh from Kolkata , but my roots belong from Bihar, so definitely a deadly combination.</h2>
-    <p>I'm nothing but just a boy of a lower-middle-class family, running behind the responsibilities of being perfect so that I can fit into this so-called society, leaving behind my own happiness, goals, and needs. Who cares? So here we are going to try everything that will help us in leaving the so-called society behind and making ourselves happy! Let's start everything from scratch.</p>
-    <p>So first of all, you all need to know what the word 'everything' means? According to the author, the word <b>"Everything"</b> refers to <b>"Money."</b> Yeah! You will understand that maturity is nothing but a realization when you understand that this piece of paper is more important than anything in this hell!</p>
-  </section>
+  <main>
+    <section id="about" class="section">
+      <h2>Hey! I am Ashish Singh from Kolkata, but my roots belong from Bihar, so definitely a deadly combination.</h2>
+      <p>I'm nothing but just a boy of a lower-middle-class family, running behind the responsibilities of being perfect so that I can fit into this so-called society, leaving behind my own happiness, goals, and needs. Who cares? So here we are going to try everything that will help us in leaving the so-called society behind and making ourselves happy! Let's start everything from scratch.</p>
+      <p>So first of all, you all need to know what the word 'everything' means? According to the author, the word <b>"Everything"</b> refers to <b>"Money."</b> Yeah! You will understand that maturity is nothing but a realization when you understand that this piece of paper is more important than anything in this hell!</p>
+    </section>
 
-  <!-- Share Section -->
-  <section class="share">
-    <h2>Share My Website</h2>
-    <p>Like what you see? Share it with others!</p>
-    <div class="share-buttons">
-      <button onclick="copyLink()">Copy Link</button>
-      <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20site%3A%20https%3A%2F%2Fyourdomain.com" target="_blank">WhatsApp</a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com" target="_blank">Facebook</a>
-    </div>
-  </section>
+    <!-- Share Section -->
+    <section class="share">
+      <h2>Share My Website</h2>
+      <p>Like what you see? Share it with others!</p>
+      <div class="share-buttons">
+        <button onclick="copyLink()" aria-label="Copy website link">Copy Link</button>
+        <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20site%3A%20https%3A%2F%2Fyourdomain.com" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp">WhatsApp</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">Facebook</a>
+      </div>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <h2>Contact Me</h2>
-    <p>Let's connect! I'm just one click away 😊</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <h2>Contact Me</h2>
+      <p>Let's connect! I'm just one click away 😊</p>
 
-    <div class="contact-icons">
-      <a href="https://wa.me/918582811631" target="_blank">
-        <img src="icons8-whatsapp-logo.gif" alt="WhatsApp" />
-      </a>
-      <a href="https://www.instagram.com/_phobbic.assish?igsh=MXJjMGNpeWdwaWxlYw==" target="_blank">
-        <img src="icons8-instagram-logo.gif" alt="Instagram" />
-      </a>
-      <a href="https://www.facebook.com/share/1HrFjfxwiX/?mibextid=qi2Omg" target="_blank">
-        <img src="icons8-facebook.gif" alt="Facebook" />
-      </a>
-      <a href="mailto:ashishsingh2112005@gmail.com" target="_blank">
-        <img src="icons8-gmail-logo.gif" alt="Email" />
-      </a>
-    </div>
-  </section>
+      <div class="contact-icons">
+        <a href="https://wa.me/918582811631" target="_blank" rel="noopener noreferrer">
+          <img src="icons8-whatsapp-logo.gif" alt="WhatsApp Logo" />
+        </a>
+        <a href="https://www.instagram.com/_phobbic.assish?igsh=MXJjMGNpeWdwaWxlYw==" target="_blank" rel="noopener noreferrer">
+          <img src="icons8-instagram-logo.gif" alt="Instagram Logo" />
+        </a>
+        <a href="https://www.facebook.com/share/1HrFjfxwiX/?mibextid=qi2Omg" target="_blank" rel="noopener noreferrer">
+          <img src="icons8-facebook.gif" alt="Facebook Logo" />
+        </a>
+        <a href="mailto:ashishsingh2112005@gmail.com" target="_blank" rel="noopener noreferrer">
+          <img src="icons8-gmail-logo.gif" alt="Gmail Logo" />
+        </a>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Money&Moves. All rights reserved.</p>
   </footer>
+
+  <script>
+    function copyLink() {
+      const link = "https://yourdomain.com";
+      navigator.clipboard.writeText(link).then(() => {
+        alert("Link copied to clipboard!");
+      });
+    }
+  </script>
 
 </body>
 </html>
