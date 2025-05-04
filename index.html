@@ -8,9 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
   <link rel="icon" href="weblogo.jpg" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -23,35 +20,20 @@
       </ul>
     </nav>
   </header>
-  
-  <section id="hero" class="hero">
-    <div class="floating-stars">
-      <span>✦</span>
-      <span>✦</span>
-      <span>✦</span>
-    </div>
-    
-    <div class="floating-shapes">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
 
+  <section id="hero" class="hero">
     <div class="typewriter">
       <h1>Welcome to My Website</h1>
     </div>
-
     <h1><span class="signature">Ashish</span></h1>
     <p>Welcome to Money&Moves</p>
     <a href="#about" class="btn">Learn More</a>
   </section>
- 
+
   <section id="about" class="section">
-    <h2>Hey! I am Ashish Singh from Kolkata, but my roots belong to Bihar, so definitely a deadly combination.</h2>
-    <p>I'm just a boy from a lower-middle-class family, running behind the responsibilities of being perfect to fit in this so-called society, leaving behind my own happiness, goals, and needs. Who cares? So here, we’re going to try everything that will help us leave the so-called society behind and make ourselves happy! So let's start from the beginning.</p>
-    <p>So first of all, you all need to understand what the word "everything" means. According to the author, "everything" refers to "Money." Yeah! You’ll understand that maturity hits when you realize that this piece of paper is more important than anything in this world!</p>
+    <h2>Hey! I am Ashish Singh from Kolkata, but my roots belong to Bihar—a deadly combination.</h2>
+    <p>I'm just a boy from a lower-middle-class family, striving to meet societal expectations, often at the expense of my own happiness and goals. But who cares? Here, we'll explore ways to break free from societal constraints and pursue genuine happiness. Let's start from the beginning.</p>
+    <p>First, understand what "everything" means. To me, "everything" refers to <b>Money</b>. Maturity hits when you realize this piece of paper holds more value than anything else in this world.</p>
   </section>
 
   <section id="services" class="section">
@@ -67,7 +49,7 @@
       </div>
     </div>
   </section>
-  
+
   <section class="share">
     <h2>Share My Website</h2>
     <p>Like what you see? Share it with others!</p>
@@ -77,7 +59,7 @@
       <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com" target="_blank">Facebook</a>
     </div>
   </section>
-  
+
   <section id="contact" class="contact-section">
     <h2>Contact Me</h2>
     <p>Let's connect! I'm just one click away 😊</p>
@@ -103,10 +85,9 @@
 
   <script>
     function copyLink() {
-      const url = window.location.href;
-      navigator.clipboard.writeText(url).then(() => {
-        alert("Link copied to clipboard!");
-      });
+      navigator.clipboard.writeText(window.location.href)
+        .then(() => alert('Link copied to clipboard!'))
+        .catch(err => alert('Failed to copy link: ', err));
     }
   </script>
 </body>
