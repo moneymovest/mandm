@@ -1,132 +1,136 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Lora', serif;
-  background-color: white;
-  overflow-x: hidden;
 }
 
-.hero {
-  background-color: blue;
-  color: white;
-  padding: 50px;
+body {
+  font-family: 'Lora', serif;
+  background-color: #fff;
+}
+
+#hero {
+  background-color: #3b78e7; /* Blue background for the home section */
   text-align: center;
-}
-
-.hero h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 60px;
-  margin-top: 20px;
-}
-
-.btn {
-  background-color: #ff6600;
-  color: white;
-  padding: 15px 30px;
-  margin: 10px;
-  text-decoration: none;
-  font-size: 18px;
-  border-radius: 5px;
-  cursor: pointer;
-  display: inline-block;
+  padding: 100px 0;
   position: relative;
 }
 
-/* Button active state animation */
-#learnMoreBtn, #blogBtn {
-  font-size: 20px;
+.home-content h1 {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.home-content h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+.signature {
   font-weight: bold;
 }
 
-#learnMoreBtn:active, #blogBtn:active {
-  animation: blastAnimation 0.5s forwards;
+.home-content p {
+  font-size: 1.5rem;
+  color: white;
 }
 
-/* Keyframes for Blast Animation */
-@keyframes blastAnimation {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.2); opacity: 0.7; }
-  100% { transform: scale(1); opacity: 0; }
+.buttons .btn {
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  margin: 15px;
+  color: white;
+  background-color: #ff6f61;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-/* Floating Animation */
-.floating-stars span {
-  position: absolute;
-  animation: float 5s ease-in-out infinite;
+.buttons .btn:hover {
+  background-color: #ff4a36;
 }
 
-.floating-shapes span {
-  position: absolute;
-  animation: floatShapes 5s ease-in-out infinite;
+/* Animation for button click */
+.learn-more-btn,
+.blog-btn {
+  position: relative;
 }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
+.learn-more-btn:active,
+.blog-btn:active {
+  animation: blast 0.8s ease-out;
 }
 
-@keyframes floatShapes {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(360deg); }
-  100% { transform: rotate(0deg); }
-}
-
-/* Slide In and Out Animations */
-@keyframes slideIn {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(0); }
-}
-
-@keyframes slideOut {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-/* For About Section */
-#about {
-  display: none;
-  opacity: 0;
-}
-
-#learnMoreBtn:active + #about {
-  display: block;
-  animation: slideIn 1s forwards;
-  opacity: 1;
-}
-
-/* For Blog Section */
-#blog {
-  display: none;
-  opacity: 0;
-}
-
-#blogBtn:active + #blog {
-  display: block;
-  animation: slideIn 1s forwards;
-  opacity: 1;
-}
-
-#about:target, #blog:target {
-  display: block;
-  opacity: 1;
-  animation: slideIn 1s forwards;
-}
-
-/* Make the button same on all devices */
-@media (max-width: 600px) {
-  .btn {
-    background-color: #ff6600; /* Ensure button color stays the same */
+@keyframes blast {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-/* Make sure everything is responsive */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 40px;
+/* Smooth page transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+.share {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+}
+
+.share h2 {
+  font-size: 2rem;
+}
+
+.share-buttons a, .share-buttons button {
+  padding: 10px 30px;
+  margin: 10px;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.contact-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.contact-icons a {
+  margin: 10px;
+}
+
+.contact-icons img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+  #hero {
+    padding: 80px 20px;
   }
 
-  .btn {
-    padding: 12px 24px;
-    font-size: 16px;
+  .home-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .home-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .home-content p {
+    font-size: 1.2rem;
   }
 }
