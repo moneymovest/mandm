@@ -32,13 +32,17 @@ body {
 }
 
 .home-content h1 {
+  font-family: 'Roboto', sans-serif; 
   font-size: 3rem;
   margin-bottom: 10px;
+  font-weight: bold; 
 }
 
 .home-content h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  font-family: 'Lora', serif;
+  font-weight: bold;
 }
 
 .home-content p {
