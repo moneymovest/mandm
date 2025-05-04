@@ -18,6 +18,7 @@ body {
   background: linear-gradient(135deg, #4e54c8, #8f94fb);
   color: white;
   display: flex;
+  flex-direction: column; /* Stack content vertically */
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -34,11 +35,21 @@ body {
   margin-bottom: 20px;
 }
 
+.home-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px; /* Add spacing below the text */
+}
+
+.buttons {
+  display: flex;
+  gap: 15px; /* Add spacing between buttons */
+  margin-top: 20px; /* Add spacing above the buttons */
+}
+
 .buttons a {
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 5px;
-  margin: 5px;
   font-size: 1rem;
 }
 
