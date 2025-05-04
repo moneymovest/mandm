@@ -1,120 +1,156 @@
-body {
+* {
   margin: 0;
-  font-family: 'Lora', serif;
-}
-
-#hero {
-  background-color: #0047ab;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-  font-family: 'Great Vibes', cursive;
-  position: relative;
-  overflow: hidden;
-}
-
-#hero h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-  word-wrap: break-word;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .signature {
-  font-size: 2.5em;
   font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: white;
 }
 
-.btn {
-  background-color: white;
-  color: #0047ab;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 25px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  margin-top: 30px;
+body {
+  font-family: 'Lora', serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #333;
 }
 
-.btn:hover {
-  transform: scale(1.1);
-}
-
-.navbar {
-  background-color: white;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.navbar ul {
+.hero {
+  height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  list-style: none;
-  padding: 15px 0;
-  margin: 0;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
 }
 
-.navbar ul li {
-  margin: 0 20px;
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.navbar ul li a {
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero .btn {
+  background: white;
+  color: #2575fc;
+  padding: 0.75rem 1.5rem;
   text-decoration: none;
-  color: #0047ab;
+  border-radius: 25px;
   font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.hero .btn:hover {
+  background: #f1f1f1;
 }
 
 .section {
-  padding: 50px 20px;
-  background-color: white;
-  color: black;
+  padding: 4rem 2rem;
   text-align: center;
 }
 
 .cards {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .card {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 10px;
-  width: 250px;
-  border-radius: 10px;
-  background-color: #f9f9f9;
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
-.contact-section {
+@media(min-width: 768px) {
+  .cards {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .card {
+    width: 300px;
+  }
+}
+
+footer {
   text-align: center;
-  padding: 50px 20px;
+  padding: 2rem;
+  background: #eee;
+  font-size: 0.9rem;
 }
 
-.contact-icons img {
-  width: 50px;
-  margin: 10px;
+.share {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #f4f4f4;
 }
 
-.share-buttons button,
-.share-buttons a {
-  margin: 5px;
-  padding: 10px 20px;
-  background-color: #0047ab;
-  color: white;
+.share h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.share-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.share-buttons a,
+.share-buttons button {
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 20px;
+  background-color: #2575fc;
+  color: white;
+  border-radius: 25px;
   text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.blast {
-  animation: explode 1.2s ease-in-out;
+.share-buttons a:hover,
+.share-buttons button:hover {
+  background-color: #1a5edb;
 }
 
-@keyframes explode {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.1); opacity: 0.5; }
-  100% { transform: scale(1); opacity: 1; }
+@media(min-width: 600px) {
+  .share-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@keyframes blast {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.blast-effect {
+  animation: blast 0.8s ease;
+}
+
+.hero {
+  font-family: 'Great Vibes', cursive; /* Ensuring homepage font style */
 }
