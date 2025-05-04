@@ -18,7 +18,7 @@ body {
 /* Hero Section */
 #hero {
   height: 100vh;
-  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  background: linear-gradient(135deg, #0c1398, #03075c);
   color: white;
   display: flex;
   flex-direction: column; /* Stack content vertically */
@@ -61,14 +61,13 @@ body {
 }
 
 .learn-more-btn {
-  background-color: #28a745;
-  color: white;
+  background-color: #c2109b;
+  color: blue;
 }
 
 .blog-btn {
-  background-color: #ffffff;
-  color: #4e54c8;
-  border: 2px solid #4e54c8;
+  background-color: #c2109b;
+  color: blue;
 }
 
 /* About Section */
@@ -145,6 +144,6 @@ body {
 footer {
   text-align: center;
   padding: 20px;
-  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  background: linear-gradient(135deg, #040963, #04096b);
   color: white;
 }
