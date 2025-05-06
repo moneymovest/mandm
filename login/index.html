@@ -79,6 +79,45 @@
   });
 
 </script>
+  <script>
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  // Check if the user is already signed in
+  auth.onAuthStateChanged(function(user) {
+    if (user) {
+      // If the user is logged in, redirect them to the homepage
+      window.location.href = "/mandm/index.html"; // Replace with your homepage path
+    } else {
+      // If not logged in, stay on the login page
+      console.log("User is not signed in.");
+    }
+  });
+
+  // Sign-in process
+  document.getElementById("loginBtn").addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent the form from submitting
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (!email || !password) {
+      alert("Please enter both username and password.");
+      return;
+    }
+
+    auth.signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        alert("Login successful!");
+        window.location.href = "/mandm/index.html"; // Redirect to the homepage
+      })
+      .catch((error) => {
+        alert("Login failed: " + error.message);
+      });
+  });
+</script>
+
 
 </body>
 </html>
