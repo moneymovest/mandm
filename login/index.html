@@ -47,7 +47,7 @@
   const auth = firebase.auth();
 
   document.getElementById("loginBtn").addEventListener("click", function (e) {
-    e.preventDefault();
+    e.preventDefault(); // Prevent page reload on submit
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
@@ -57,15 +57,27 @@
       return;
     }
 
+    // Firebase Authentication Sign In
     auth.signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
+        // Successfully signed in
         alert("Login successful!");
+
+        // Redirect to home page after successful login
         window.location.href = "/mandm/index.html";  // redirect to your home page
       })
       .catch((error) => {
-        alert("Login failed: " + error.message);
+        alert("Login failed: " + error.message);  // Display error message if login fails
       });
   });
+
+  // Check if the user is already logged in and redirect if so
+  auth.onAuthStateChanged(function(user) {
+    if (user) {
+      window.location.href = "/mandm/index.html";  // If already logged in, redirect to home page
+    }
+  });
+
 </script>
 
 </body>
