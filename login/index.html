@@ -61,6 +61,25 @@
       });
   });
 </script>
+  <script>
+  document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form from submitting
+
+    var username = document.querySelector("input[type='text']").value;
+    var password = document.querySelector("input[type='password']").value;
+
+    // Basic validation
+    if (username === "" || password === "") {
+      alert("Please enter both username and password!");
+    } else {
+      // Here you can add further authentication or API calls.
+      alert("Logged in successfully!");
+      // Redirect to home page after successful login
+      window.location.href = "/index.html";
+    }
+  });
+</script>
+
 
 </body>
 </html>
