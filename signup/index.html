@@ -18,11 +18,51 @@
 </head>
 <body>
   <h2>Create an Account</h2>
-  <input type="text" placeholder="Username" required><br>
-  <input type="email" placeholder="Email" required><br>
-  <input type="password" placeholder="Password" required><br>
-  <input type="submit" value="Sign Up">
+  <input type="text" id="username" placeholder="Username" required><br>
+  <input type="email" id="email" placeholder="Email" required><br>
+  <input type="password" id="password" placeholder="Password" required><br>
+  <input type="submit" id="signupBtn" value="Sign Up">
   <br><br>
-  <a href="/login/index.html">Back to Login</a>
+  <a href="/mandm/login/index.html">Back to Login</a>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
+
+  <script>
+    // Your Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyC-HcA9GVN4Ln8BMT_sEmOPN_xn8IKfv5s",
+      authDomain: "mysitelogin-8814d.firebaseapp.com",
+      projectId: "mysitelogin-8814d",
+      storageBucket: "mysitelogin-8814d.appspot.com",
+      messagingSenderId: "842407740484",
+      appId: "1:842407740484:web:0af67bcd566061820a2811",
+      measurementId: "G-0YLVYR19P3"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    document.getElementById("signupBtn").addEventListener("click", function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (!email || !password) {
+        alert("Please fill in all fields!");
+        return;
+      }
+
+      auth.createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          alert("Signup successful!");
+          window.location.href = "/mandm/login/index.html";
+        })
+        .catch((error) => {
+          alert("Signup failed: " + error.message);
+        });
+    });
+  </script>
 </body>
 </html>
