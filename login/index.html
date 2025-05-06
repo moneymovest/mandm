@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Modern Animated Login Form</title>
   <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-<!-- partial:index.partial.html -->
+
 <div class="box">
   <div class="login">
     <div class="loginBx">
@@ -16,70 +15,58 @@
         Login
         <i class="fa-solid fa-heart"></i>
       </h2>
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
+
+      <input type="text" id="email" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
       <input type="submit" id="loginBtn" value="Sign in" />
-     <div class="group">
-  <a href="/mandm/forgot-password/">Forgot Password</a>
-  <a href="/mandm/signup/">Sign up</a>
-</div>
+
+      <div class="group">
+        <a href="/mandm/forgot-password/">Forgot Password</a>
+        <a href="/mandm/signup/">Sign up</a>
+      </div>
     </div>
   </div>
 </div>
-<!-- partial -->
- <!-- Firebase SDKs -->
-<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js"></script>
+
+<!-- Firebase SDKs using compat (no import needed) -->
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
 
 <script>
-  // Replace with your own config from Firebase Console
   const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyC-HcA9GVN4Ln8BMT_sEmOPN_xn8IKfv5s",
+    authDomain: "mysitelogin-8814d.firebaseapp.com",
+    projectId: "mysitelogin-8814d",
+    storageBucket: "mysitelogin-8814d.appspot.com",
+    messagingSenderId: "842407740484",
+    appId: "1:842407740484:web:0af67bcd566061820a2811",
+    measurementId: "G-0YLVYR19P3"
   };
 
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
-</script>
-<script>
-  document.getElementById("loginBtn").addEventListener("click", () => {
-    const email = document.querySelector('input[placeholder="Username"]').value;
-    const password = document.querySelector('input[placeholder="Password"]').value;
+
+  document.getElementById("loginBtn").addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (!email || !password) {
+      alert("Please enter both username and password.");
+      return;
+    }
 
     auth.signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         alert("Login successful!");
-        // Optionally redirect
-        // window.location.href = "dashboard.html";
+        window.location.href = "/mandm/index.html";  // redirect to your home page
       })
       .catch((error) => {
         alert("Login failed: " + error.message);
       });
   });
 </script>
-  <script>
-  document.querySelector("form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form from submitting
-
-    var username = document.querySelector("input[type='text']").value;
-    var password = document.querySelector("input[type='password']").value;
-
-    // Basic validation
-    if (username === "" || password === "") {
-      alert("Please enter both username and password!");
-    } else {
-      // Here you can add further authentication or API calls.
-      alert("Logged in successfully!");
-      // Redirect to home page after successful login
-      window.location.href = "/index.html";
-    }
-  });
-</script>
-
 
 </body>
 </html>
