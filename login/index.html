@@ -80,10 +80,6 @@
 
 </script>
   <script>
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
-
   // Check if the user is already signed in
   auth.onAuthStateChanged(function(user) {
     if (user) {
