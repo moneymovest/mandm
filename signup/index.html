@@ -29,7 +29,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
 
   <script>
-    // Your Firebase config
+    // Firebase config and initialization
     const firebaseConfig = {
       apiKey: "AIzaSyC-HcA9GVN4Ln8BMT_sEmOPN_xn8IKfv5s",
       authDomain: "mysitelogin-8814d.firebaseapp.com",
@@ -44,7 +44,7 @@
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
 
-    // Signup button click event
+    // Signup button logic
     document.getElementById("signupBtn").addEventListener("click", function () {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
@@ -58,7 +58,8 @@
       auth.createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
           alert("Signup successful!");
-          window.location.href = "/mandm/login/index.html";  // Redirect to login after signup
+          // Redirect to login page after successful signup
+          window.location.href = "/mandm/login/index.html";
         })
         .catch((error) => {
           alert("Signup failed: " + error.message);
