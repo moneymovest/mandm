@@ -7,6 +7,29 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
   <link rel="icon" href="weblogo.jpg" type="image/x-icon">
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
+
+  <!-- ✅ Firebase Auth Initialization -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyC-HcA9GVN4Ln8BMT_sEmOPN_xn8IKfv5s",
+      authDomain: "mysitelogin-8814d.firebaseapp.com",
+      projectId: "mysitelogin-8814d",
+      storageBucket: "mysitelogin-8814d.appspot.com",
+      messagingSenderId: "842407740484",
+      appId: "1:842407740484:web:0af67bcd566061820a2811",
+      measurementId: "G-0YLVYR19P3"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (!user) {
+        window.location.href = "/mandm/login/index.html";
+      }
+    });
+  </script>
 
 </head>
 <body>
