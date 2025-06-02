@@ -10,6 +10,42 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
 </head>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+<script>
+  // Scene setup
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.insertBefore(renderer.domElement, document.body.firstChild);
+
+  // Add floating shapes
+  const shapes = [];
+  const geometry = new THREE.IcosahedronGeometry(1, 0);
+  const material = new THREE.MeshPhongMaterial({ 
+    color: 0x6e48aa, 
+    emissive: 0x1a1a1a, 
+    flatShading: true 
+  });
+
+  for (let i = 0; i < 5; i++) {
+    const shape = new THREE.Mesh(geometry, material);
+    shape.position.set(Math.random() * 10 - 5, Math.random() * 10 - 5, Math.random() * -10);
+    shapes.push(shape);
+    scene.add(shape);
+  }
+
+  // Animation loop
+  function animate() {
+    requestAnimationFrame(animate);
+    shapes.forEach(shape => {
+      shape.rotation.x += 0.005;
+      shape.rotation.y += 0.01;
+    });
+    renderer.render(scene, camera);
+  }
+  animate();
+</script>
 <body>
 
   <!-- Hero Section -->
