@@ -151,3 +151,27 @@ footer {
   background: linear-gradient(135deg, #040963, #04096b);
   color: white;
 }
+/* 3D Button Styling */
+.btn-3d {
+  background: linear-gradient(145deg, #6e48aa, #9d50bb);
+  border: none;
+  padding: 15px 30px;
+  color: white;
+  font-size: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
+             0 0 0 2px #6e48aa inset;
+}
+
+.btn-3d:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 
+              0 0 0 2px #9d50bb inset;
+}
+
+.btn-3d:active {
+  transform: translateY(0) scale(0.98);
+}
