@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Money&Moves</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-  <link rel="icon" href="weblogo.jpg" type="image/x-icon">
+  <link rel="icon" href="assets/weblogo.jpg" type="image/x-icon">
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
 </head>
   
 <body>
-
   <!-- Hero Section -->
   <header id="hero">
     <div class="home-content">
       <h1>Welcome to Money&Moves by</h1>
       <h2><span class="signature">Ashish</span></h2>
       <div class="buttons">
-        <a href="#about" class="btn learn-more-btn">Learn More</a>
-        <a href="blog.html" class="btn blog-btn">Blog</a>
+        <a href="#about" class="btn btn-3d learn-more-btn">Learn More</a>
+        <a href="blog.html" class="btn btn-3d blog-btn">Blog</a>
       </div>
     </div>
   </header>
@@ -38,9 +37,9 @@
       <h2>Share My Website</h2>
       <p>Like what you see? Share it with others!</p>
       <div class="share-buttons">
-        <button onclick="copyLink()" aria-label="https://moneymovest.github.io/mandm/">Copy Link</button>
-        <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20site%3A%20https://moneymovest.github.io/mandm/" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp">WhatsApp</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://moneymovest.github.io/mandm/" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">Facebook</a>
+        <button onclick="copyLink()" class="btn-3d" aria-label="Copy Link">Copy Link</button>
+        <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20site%3A%20https://moneymovest.github.io/mandm/" class="btn-3d" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp">WhatsApp</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://moneymovest.github.io/mandm/" class="btn-3d" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">Facebook</a>
       </div>
     </section>
 
@@ -48,19 +47,18 @@
     <section id="contact" class="contact-section">
       <h2>Contact Me</h2>
       <p>Let's connect! I'm just one click away 😊</p>
-
       <div class="contact-icons">
         <a href="https://wa.me/918582811631" target="_blank" rel="noopener noreferrer">
-          <img src="icons8-whatsapp-logo.gif" alt="WhatsApp Logo" />
+          <img src="assets/icons8-whatsapp-logo.gif" alt="WhatsApp">
         </a>
         <a href="https://www.instagram.com/_phobbic.assish?igsh=MXJjMGNpeWdwaWxlYw==" target="_blank" rel="noopener noreferrer">
-          <img src="icons8-instagram-logo.gif" alt="Instagram Logo" />
+          <img src="assets/icons8-instagram-logo.gif" alt="Instagram">
         </a>
         <a href="https://www.facebook.com/share/1HrFjfxwiX/?mibextid=qi2Omg" target="_blank" rel="noopener noreferrer">
-          <img src="icons8-facebook.gif" alt="Facebook Logo" />
+          <img src="assets/icons8-facebook.gif" alt="Facebook">
         </a>
         <a href="mailto:ashishsingh2112005@gmail.com" target="_blank" rel="noopener noreferrer">
-          <img src="icons8-gmail-logo.gif" alt="Gmail Logo" />
+          <img src="assets/icons8-gmail-logo.gif" alt="Gmail">
         </a>
       </div>
     </section>
@@ -70,60 +68,7 @@
     <p>&copy; 2025 Money&Moves. All rights reserved.</p>
   </footer>
 
-  <script>
-    function copyLink() {
-      const link = "https://moneymovest.github.io/mandm/";
-      navigator.clipboard.writeText(link).then(() => {
-        alert("Link copied to clipboard!");
-      });
-    }
-  </script>
-  <script>
-  // Check if the user is logged in
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (!user) {
-      // Redirect to login page if the user is not logged in
-      window.location.href = "/mandm/login/index.html";
-    }
-  });
-</script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
-<script>
-  // Scene setup
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ alpha: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.insertBefore(renderer.domElement, document.body.firstChild);
-
-  // Add floating shapes
-  const shapes = [];
-  const geometry = new THREE.IcosahedronGeometry(1, 0);
-  const material = new THREE.MeshPhongMaterial({ 
-    color: 0x6e48aa, 
-    emissive: 0x1a1a1a, 
-    flatShading: true 
-  });
-
-  for (let i = 0; i < 5; i++) {
-    const shape = new THREE.Mesh(geometry, material);
-    shape.position.set(Math.random() * 10 - 5, Math.random() * 10 - 5, Math.random() * -10);
-    shapes.push(shape);
-    scene.add(shape);
-  }
-
-  // Animation loop
-  function animate() {
-    requestAnimationFrame(animate);
-    shapes.forEach(shape => {
-      shape.rotation.x += 0.005;
-      shape.rotation.y += 0.01;
-    });
-    renderer.render(scene, camera);
-  }
-  animate();
-</script>
-
-
+  <script src="three.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
