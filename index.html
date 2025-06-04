@@ -9,8 +9,12 @@
   <link rel="icon" href="assets/weblogo.jpg" type="image/x-icon">
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
- 
-
+  <script>
+  // If not logged in, redirect to login page
+  if (!localStorage.getItem("isLoggedIn")) {
+    window.location.href = "login/index.html";
+  }
+</script>
 </head>
   
 <body>
