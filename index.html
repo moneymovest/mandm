@@ -77,5 +77,14 @@
 
   <script src="three.min.js"></script>
   <script src="app.js"></script>
+  <button onclick="logout()" style="position:fixed; top:10px; right:10px;">Logout</button>
+
+<script>
+  function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "login/index.html";
+  }
+</script>
+
 </body>
 </html>
